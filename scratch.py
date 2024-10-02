@@ -391,10 +391,10 @@ for f_id in top_5_sae_18_latents:
     scatter(
         x=sae_acts_18[:, f_id], y=sae_attrs_18[:, f_id], title=f"SAE 18 Feature {f_id}"
     )
-
+# %%
 release, sae_id = sae_24.cfg.neuronpedia_id.split("/")
 for f_id in top_5_sae_24_latents:
-    html = get_dashboard_html(sae_release=release, sae_id=sae_id, f_id=feature_idx)
+    html = get_dashboard_html(sae_release=release, sae_id=sae_id, feature_idx=f_id)
     display(IFrame(html, width=1200, height=600))
     scatter(
         x=sae_acts_24[:, f_id], y=sae_attrs_24[:, f_id], title=f"SAE 24 Feature {f_id}"
